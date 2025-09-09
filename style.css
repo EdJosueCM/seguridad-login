@@ -1,0 +1,89 @@
+:root{
+  --bg: #0b1020;
+  --card: #141a2d;
+  --card-2: #19223b;
+  --text: #e6ebff;
+  --muted: #a6b0d9;
+  --primary: #6aa6ff;
+  --primary-strong: #4b8df0;
+  --danger: #631621;
+  --ring: rgba(106,166,255,.45);
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --radius: 18px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, sans-serif;
+  background: radial-gradient(1200px 600px at 80% -10%, #1e2a4d 0%, transparent 60%), var(--bg);
+  color: var(--text);
+  line-height:1.5;
+}
+
+.container{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding: 32px 16px;
+}
+
+.card{
+  width:100%;
+  max-width:420px;
+  background: linear-gradient(180deg, var(--card) 0%, var(--card-2) 100%);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding:24px;
+}
+
+.card__header{text-align:center;margin-bottom:18px;}
+.logo{width:56px;height:56px;border-radius:12px;}
+h1{margin:6px 0;font-size:1.6rem;}
+.subtitle{color:var(--muted);font-size:.95rem;}
+
+.field{margin:14px 0;}
+label{display:block;margin-bottom:6px;font-weight:600;}
+input[type="email"], input[type="password"]{
+  width:100%;padding:12px 14px;border-radius:12px;
+  border:1px solid transparent;background:rgba(255,255,255,0.06);
+  color:var(--text);
+}
+input:focus{
+  border-color:var(--primary);
+  box-shadow:0 0 0 4px var(--ring);
+}
+
+.password-wrapper{position:relative;}
+.icon-btn{
+  position:absolute;right:6px;top:50%;transform:translateY(-50%);
+  background:transparent;border:none;color:var(--muted);cursor:pointer;
+}
+.icon-btn:hover{color:var(--text);}
+
+.error{margin-top:6px;color:var(--danger);font-size:.9rem;min-height:1.2em;}
+
+.row{display:flex;align-items:center;gap:10px;}
+.between{justify-content:space-between;}
+.checkbox{display:flex;align-items:center;gap:8px;color:var(--muted);}
+.link{color:var(--primary);text-decoration:none;}
+.link:hover{text-decoration:underline;}
+
+.primary,.secondary{
+  width:100%;padding:12px 16px;border-radius:12px;margin-top:12px;
+  cursor:pointer;font-weight:700;
+}
+.primary{
+  background: linear-gradient(180deg,var(--primary) 0%,var(--primary-strong) 100%);
+  color:#0b1020;
+}
+.secondary{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.25);}
+.secondary:hover{border-color:rgba(255,255,255,0.5);}
+
+meter{width:100%;height:10px;margin-top:8px;border-radius:8px;}
+meter::-webkit-meter-bar{background:rgba(255,255,255,0.08);border-radius:8px;}
+meter::-webkit-meter-optimum-value{background:#48d597;}
+meter::-webkit-meter-suboptimum-value{background:#ffd166;}
+meter::-webkit-meter-even-less-good-value{background:var(--danger);}
+
+.footer{text-align:center;margin-top:20px;color:var(--muted);font-size:.9rem;}
